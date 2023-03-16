@@ -44,8 +44,14 @@ local math_iA = {
   ls.parser.parse_snippet({ trig = "fim", name = "infimum" }, "\\inf_{$1}$0 "),
   ls.parser.parse_snippet({ trig = "sup", name = "supremum" }, "\\sup_{$1}$0 "),
 
-  ls.parser.parse_snippet({ trig = "amin", name = "argmin" }, "\\argmin_{$1}$0 "),
-  ls.parser.parse_snippet({ trig = "amax", name = "argmax" }, "\\argmax_{$1}$0 "),
+  with_priority(
+    ls.parser.parse_snippet({ trig = "amin", name = "argmin" }, "\\argmin_{$1}$0 "),
+    1100
+  ),
+  with_priority(
+    ls.parser.parse_snippet({ trig = "amax", name = "argmax" }, "\\argmax_{$1}$0 "),
+    1100
+  ),
 
   with_priority(ls.parser.parse_snippet({ trig = "min", name = "min" }, "\\min_{$1}$0 "), 100),
   with_priority(ls.parser.parse_snippet({ trig = "max", name = "max" }, "\\max_{$1}$0 "), 100),
