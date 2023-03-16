@@ -30,11 +30,34 @@ local math_iA = {
   ),
 
   -- BEGIN (AHAN98)
+  ls.parser.parse_snippet({ trig = "_", name = "underscore" }, "_{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "nin", name = "not in" }, "\\not\\in "),
+  ls.parser.parse_snippet({ trig = "sbeq", name = "subseteq" }, "\\subseteq "),
+  ls.parser.parse_snippet({ trig = "speq", name = "supseteq" }, "\\supseteq "),
+
+  ls.parser.parse_snippet({ trig = "Cup", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}} $0"),
+  ls.parser.parse_snippet({ trig = "cup", name = "cup" }, "\\cup_{${1:i \\in ${2: I}}} $0"),
+
+  ls.parser.parse_snippet({ trig = "Cap", name = "bigcap" }, "\\bigcap_{${1:i \\in ${2: I}}} $0"),
+  ls.parser.parse_snippet({ trig = "cap", name = "cap" }, "\\cap_{${1:i \\in ${2: I}}} $0"),
+
   ls.parser.parse_snippet({ trig = "fim", name = "infimum" }, "\\inf_{$1}$0 "),
   ls.parser.parse_snippet({ trig = "sup", name = "supremum" }, "\\sup_{$1}$0 "),
-  ls.parser.parse_snippet({ trig = "min", name = "minimum" }, "\\min{$1}$0 "),
-  ls.parser.parse_snippet({ trig = "max", name = "maximum" }, "\\max{$1}$0 "),
 
+  ls.parser.parse_snippet({ trig = "min", name = "min" }, "\\min_{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "max", name = "max" }, "\\max_{$1}$0 "),
+
+  ls.parser.parse_snippet({ trig = "amin", name = "argmin" }, "\\argmin_{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "amax", name = "argmax" }, "\\argmax_{$1}$0 "),
+
+  ls.parser.parse_snippet(
+    { trig = ":=", name = "colon equals (lhs defined as rhs)" },
+    "\\coloneqq "
+  ),
+  ls.parser.parse_snippet(
+    { trig = "=:", name = "equals colon (rhs defined as lhs)" },
+    "\\eqqcolon "
+  ),
   -- END
 
   ls.parser.parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
@@ -54,9 +77,9 @@ local math_iA = {
   ls.parser.parse_snippet({ trig = "xmm", name = "x" }, "x_{m}"),
   ls.parser.parse_snippet({ trig = "R0+", name = "R0+" }, "\\mathbb{R}_0^+"),
 
-  ls.parser.parse_snippet({ trig = "notin", name = "not in " }, "\\not\\in "),
-
-  ls.parser.parse_snippet({ trig = "cc", name = "subset" }, "\\subset "),
+  -- ls.parser.parse_snippet({ trig = "notin", name = "not in " }, "\\not\\in "),
+  --
+  -- ls.parser.parse_snippet({ trig = "cc", name = "subset" }, "\\subset "),
 
   with_priority(
     ls.parser.parse_snippet({ trig = "<->", name = "leftrightarrow" }, "\\leftrightarrow"),
@@ -85,7 +108,7 @@ local math_iA = {
     { trig = "letw", name = "let omega" },
     "Let $\\Omega \\subset \\C$ be open."
   ),
-  ls.parser.parse_snippet({ trig = "nnn", name = "bigcap" }, "\\bigcap_{${1:i \\in ${2: I}}} $0"),
+  -- ls.parser.parse_snippet({ trig = "nnn", name = "bigcap" }, "\\bigcap_{${1:i \\in ${2: I}}} $0"),
   ls.parser.parse_snippet({ trig = "norm", name = "norm" }, "\\|$1\\|$0"),
   ls.parser.parse_snippet({ trig = "<>", name = "hokje" }, "\\diamond "),
   ls.parser.parse_snippet({ trig = ">>", name = ">>" }, "\\gg"),
@@ -107,15 +130,15 @@ local math_iA = {
   ls.parser.parse_snippet({ trig = "RR", name = "R" }, "\\mathbb{R}"),
   ls.parser.parse_snippet({ trig = "QQ", name = "Q" }, "\\mathbb{Q}"),
   ls.parser.parse_snippet({ trig = "ZZ", name = "Z" }, "\\mathbb{Z}"),
-  ls.parser.parse_snippet({ trig = "UU", name = "cup" }, "\\cup "),
+  -- ls.parser.parse_snippet({ trig = "UU", name = "cup" }, "\\cup "),
   ls.parser.parse_snippet({ trig = "NN", name = "n" }, "\\mathbb{N}"),
   ls.parser.parse_snippet({ trig = "||", name = "mid" }, " \\mid "),
-  ls.parser.parse_snippet({ trig = "Nn", name = "cap" }, "\\cap "),
+  -- ls.parser.parse_snippet({ trig = "Nn", name = "cap" }, "\\cap "),
   ls.parser.parse_snippet(
     { trig = "bmat", name = "bmat" },
     "\\begin{bmatrix} $1 \\end{bmatrix} $0"
   ),
-  ls.parser.parse_snippet({ trig = "uuu", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}} $0"),
+  -- ls.parser.parse_snippet({ trig = "uuu", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}} $0"),
   ls.parser.parse_snippet({ trig = "DD", name = "D" }, "\\mathbb{D}"),
   ls.parser.parse_snippet({ trig = "HH", name = "H" }, "\\mathbb{H}"),
   ls.parser.parse_snippet({ trig = "lll", name = "l" }, "\\ell"),
