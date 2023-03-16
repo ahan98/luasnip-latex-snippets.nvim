@@ -29,6 +29,14 @@ local math_iA = {
     end, {})
   ),
 
+  -- BEGIN (AHAN98)
+  ls.parser.parse_snippet({ trig = "fim", name = "infimum" }, "\\inf_{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "sup", name = "supremum" }, "\\sup_{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "min", name = "minimum" }, "\\min{$1}$0 "),
+  ls.parser.parse_snippet({ trig = "max", name = "maximum" }, "\\max{$1}$0 "),
+
+  -- END
+
   ls.parser.parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
   ls.parser.parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0 "),
   ls.parser.parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3 "),
