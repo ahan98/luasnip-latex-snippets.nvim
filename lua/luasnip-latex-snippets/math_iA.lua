@@ -53,6 +53,8 @@ local math_iA = {
 
   parse({ trig = ":=", name = "colon equals (lhs defined as rhs)" }, "\\coloneqq "),
   parse({ trig = "=:", name = "equals colon (rhs defined as lhs)" }, "\\eqqcolon "),
+
+  parse({ trig = "norm", name = "norm || . ||" }, "\\left\\lVert $1\\right\\rVert$0 "),
   -- END
 
   parse({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
@@ -92,7 +94,7 @@ local math_iA = {
 
   parse({ trig = "letw", name = "let omega" }, "Let $\\Omega \\subset \\C$ be open."),
   -- parse({ trig = "nnn", name = "bigcap" }, "\\bigcap_{${1:i \\in ${2: I}}} $0"),
-  parse({ trig = "norm", name = "norm" }, "\\|$1\\|$0"),
+  -- parse({ trig = "norm", name = "norm" }, "\\|$1\\|$0"),
   parse({ trig = "<>", name = "hokje" }, "\\diamond "),
   parse({ trig = ">>", name = ">>" }, "\\gg"),
   parse({ trig = "<<", name = "<<" }, "\\ll"),
