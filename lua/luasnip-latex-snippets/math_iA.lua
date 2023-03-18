@@ -54,7 +54,8 @@ local math_iA = {
   parse({ trig = ":=", name = "colon equals (lhs defined as rhs)" }, "\\coloneqq "),
   parse({ trig = "=:", name = "equals colon (rhs defined as lhs)" }, "\\eqqcolon "),
 
-  parse({ trig = "norm", name = "norm || . ||" }, "\\left\\lVert $1\\right\\rVert$0 "),
+  -- parse({ trig = "norm", name = "norm || . ||" }, "\\left\\lVert $1\\right\\rVert$0 "),
+  parse({ trig = "norm", name = "norm || . ||" }, "\\norm{ $1 }$0 "),
   -- END
 
   parse({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
