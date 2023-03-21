@@ -50,7 +50,7 @@ local math_iA = {
 
   -- parse({ trig = "norm", name = "norm || . ||" }, "\\left\\lVert $1\\right\\rVert$0 "),
   parse({ trig = "norm", name = "norm || . ||" }, "\\norm{ $1 }$0 "),
-  parse({ trig = "sim", name = "tilde symbol ~" }, "\\sim $0 "),
+  parse({ trig = "tld", name = "tilde overhead" }, "\\tilde{ $1 }$0 "),
   -- END
 
   parse({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
@@ -58,7 +58,7 @@ local math_iA = {
   parse({ trig = "cb", name = "Cube ^3" }, "^3 "),
   parse({ trig = "sr", name = "Square ^2" }, "^2"),
 
-  parse({ trig = "xis", name = "exists" }, "\\exists "),
+  parse({ trig = "tx", name = "exists" }, "\\exists "),
   parse({ trig = "fora", name = "forall" }, "\\forall "),
   parse({ trig = "xnn", name = "xn" }, "x_{n}"),
   parse({ trig = "ynn", name = "yn" }, "y_{n}"),
