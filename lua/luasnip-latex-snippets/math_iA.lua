@@ -58,8 +58,8 @@ local math_iA = {
   parse({ trig = "cb", name = "Cube ^3" }, "^3 "),
   parse({ trig = "sr", name = "Square ^2" }, "^2"),
 
-  parse({ trig = "EE", name = "exists" }, "\\exists "),
-  parse({ trig = "AA", name = "forall" }, "\\forall "),
+  parse({ trig = "xis", name = "exists" }, "\\exists "),
+  parse({ trig = "fora", name = "forall" }, "\\forall "),
   parse({ trig = "xnn", name = "xn" }, "x_{n}"),
   parse({ trig = "ynn", name = "yn" }, "y_{n}"),
   parse({ trig = "xii", name = "xi" }, "x_{i}"),
