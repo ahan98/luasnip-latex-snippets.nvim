@@ -35,27 +35,22 @@ local math_iA = {
   parse({ trig = "nin", name = "not in" }, "\\not\\in "),
   parse({ trig = "sbeq", name = "subseteq" }, "\\subseteq "),
   parse({ trig = "speq", name = "supseteq" }, "\\supseteq "),
-
   parse({ trig = "Cup", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}} $0"),
   parse({ trig = "cup", name = "cup" }, "\\cup_{${1:i \\in ${2: I}}} $0"),
-
   parse({ trig = "Cap", name = "bigcap" }, "\\bigcap_{${1:i \\in ${2: I}}} $0"),
   parse({ trig = "cap", name = "cap" }, "\\cap_{${1:i \\in ${2: I}}} $0"),
-
   parse({ trig = "fim", name = "infimum" }, "\\inf_{$1}$0 "),
   parse({ trig = "sup", name = "supremum" }, "\\sup_{$1}$0 "),
-
   with_priority(parse({ trig = "amin", name = "argmin" }, "\\argmin_{$1}$0 "), 1100),
   with_priority(parse({ trig = "amax", name = "argmax" }, "\\argmax_{$1}$0 "), 1100),
-
   parse({ trig = "min", name = "min" }, "\\min_{$1}$0 "),
   parse({ trig = "max", name = "max" }, "\\max_{$1}$0 "),
-
   parse({ trig = ":=", name = "colon equals (lhs defined as rhs)" }, "\\coloneqq "),
   parse({ trig = "=:", name = "equals colon (rhs defined as lhs)" }, "\\eqqcolon "),
 
   -- parse({ trig = "norm", name = "norm || . ||" }, "\\left\\lVert $1\\right\\rVert$0 "),
   parse({ trig = "norm", name = "norm || . ||" }, "\\norm{ $1 }$0 "),
+  parse({ trig = "sim", name = "tilde symbol ~" }, "\\sim $0 "),
   -- END
 
   parse({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
@@ -92,7 +87,6 @@ local math_iA = {
   parse({ trig = "//", name = "Fraction" }, "\\frac{$1}{$2}$0"),
   parse({ trig = "\\\\\\", name = "setminus" }, "\\setminus"),
   with_priority(parse({ trig = "->", name = "to" }, "\\to "), 100),
-
   parse({ trig = "letw", name = "let omega" }, "Let $\\Omega \\subset \\C$ be open."),
   -- parse({ trig = "nnn", name = "bigcap" }, "\\bigcap_{${1:i \\in ${2: I}}} $0"),
   -- parse({ trig = "norm", name = "norm" }, "\\|$1\\|$0"),
@@ -104,7 +98,6 @@ local math_iA = {
   parse({ trig = "tt", name = "text" }, "\\text{$1}$0"),
 
   parse({ trig = "xx", name = "cross" }, "\\times "),
-
   with_priority(parse({ trig = "**", name = "cdot" }, "\\cdot "), 100),
 
   parse(
@@ -113,6 +106,7 @@ local math_iA = {
   ),
   parse({ trig = "ceil", name = "ceil" }, "\\left\\lceil $1 \\right\\rceil $0"),
   parse({ trig = "OO", name = "emptyset" }, "\\O"),
+  parse({ trig = "EE", name = "E" }, "\\mathbb{E}"),
   parse({ trig = "RR", name = "R" }, "\\mathbb{R}"),
   parse({ trig = "QQ", name = "Q" }, "\\mathbb{Q}"),
   parse({ trig = "ZZ", name = "Z" }, "\\mathbb{Z}"),
